@@ -143,6 +143,11 @@ impl Builder {
         self
     }
 
+    pub fn no_coop(&mut self) -> &mut Self {
+        self.inner.no_coop();
+        self
+    }
+
     /// Create the configured `Runtime`.
     ///
     /// The returned `ThreadPool` instance is ready to spawn tasks.

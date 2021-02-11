@@ -62,6 +62,11 @@ impl Builder {
         self
     }
 
+    pub fn no_coop(&mut self) -> &mut Self {
+        self.inner.no_coop();
+        self
+    }
+
     /// Create the configured `Runtime`.
     pub fn build(&mut self) -> io::Result<Runtime> {
         let compat_bg = compat::Background::spawn(&self.clock)?;
